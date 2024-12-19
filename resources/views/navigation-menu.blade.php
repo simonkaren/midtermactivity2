@@ -21,6 +21,11 @@
                         {{ __('New Page') }}
                     </x-nav-link>
                 </div>
+                <div class="hidden space-x-8 sm:-my-px sm:ms-10 sm:flex">
+                    <x-nav-link wire:navigate href="{{ route('product') }}" :active="request()->routeIs('product')">
+                        {{ __('Product') }}
+                    </x-nav-link>
+                </div>
             </div>
 
             <div class="hidden sm:flex sm:items-center sm:ms-6">
@@ -37,7 +42,7 @@
                                             <path stroke-linecap="round" stroke-linejoin="round" d="M8.25 15L12 18.75 15.75 15m-7.5-6L12 5.25 15.75 9" />
                                         </svg>
                                     </button>
-                                </span>
+                                    </span>
                             </x-slot>
 
                             <x-slot name="content">
@@ -146,11 +151,6 @@
         <div class="pt-2 pb-3 space-y-1">
             <x-responsive-nav-link href="{{ route('dashboard') }}" :active="request()->routeIs('dashboard')">
                 {{ __('Dashboard') }}
-            </x-responsive-nav-link>
-        </div>
-        <div class="pt-2 pb-3 space-y-1">
-            <x-responsive-nav-link href="{{ route('new-page') }}" :active="request()->routeIs('new-page')">
-                {{ __('New Page') }}
             </x-responsive-nav-link>
         </div>
 
